@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-11-06",
+  "label": "q7 rerun after the blank-abstention fix",
+  "database": "logistics_eval",
+  "embedding_model": "gemini-embedding-001",
+  "answer_model": "gemini-3.5-flash-lite",
+  "question_id": "q7",
+  "question": "Si el recuento de la carga no cierra, en que plazo hay que avisar al representante del buque?",
+  "expected_passage": "Una diferencia en la cantidad de bultos se informa al agente maritimo dentro de las dos horas.",
+  "prior_failure": {
+    "question_run_id": "72deb281-9fb4-4b13-b283-86cc02501839",
+    "state": "failed",
+    "error_code": "provider_malformed",
+    "class": "schema_mismatch",
+    "schema_error": "answer string_too_short",
+    "note": "That row was the stored Gemini response from the full run. It is also recorded in 2026-11-06-gemini.json. The row was deleted only so the same question could run again; this file keeps the failure."
+  },
+  "rerun": {
+    "question_run_id": "38e565bc-faf2-4473-8f72-c3c738fb167c",
+    "passage_in_kept": true,
+    "kept_pages": [2, 2, 1, 1, 1],
+    "state": "succeeded",
+    "outcome": "insufficient_evidence",
+    "error_code": null,
+    "citation_count": 0,
+    "passage_in_citation": false,
+    "passage_in_answer": false,
+    "answer_is_canonical_abstain": false,
+    "provider_malformed": false,
+    "answered_with_passage": false,
+    "prompt_tokens": 2850,
+    "completion_tokens": 67,
+    "answer": "Lo siento, la evidencia proporcionada no contiene información sobre el plazo para avisar al representante del buque si el recuento de la carga no cierra."
+  },
+  "passed": false,
+  "why": "provider_malformed did not recur. The model returned a non-empty abstention, so the blank-answer fill was not used. The expected sentence was retrieved and was not cited. This is not an answer-accuracy pass."
+}

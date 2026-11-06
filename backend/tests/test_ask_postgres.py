@@ -16,7 +16,6 @@ from app.services.citations import parse_model_answer
 from app.services.embeddings import get_embedding_provider
 from app.services.ingestion import execute_ingestion
 from app.services.questions import (
-    execute_question,
     get_question,
     recover_stranded_questions,
     run_question_attempt,

@@ -1,8 +1,11 @@
+import json
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from app.errors import ProviderFailed
+
+ABSTAIN_TEXT = "The indexed documents do not contain enough evidence to answer."
 
 
 class ClaimDraft(BaseModel):
@@ -25,7 +28,16 @@ class ModelAnswer(BaseModel):
 
 def parse_model_answer(raw: str, retrieved_ids: set[UUID]) -> ModelAnswer:
     try:
-        answer = ModelAnswer.model_validate_json(raw)
+        payload = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise ProviderFailed("provider_malformed") from exc
+    if isinstance(payload, dict) and payload.get("status") == "insufficient_evidence":
+        answer_text = payload.get("answer")
+        if answer_text is None or (isinstance(answer_text, str) and not answer_text.strip()):
+            payload = dict(payload)
+            payload["answer"] = ABSTAIN_TEXT
+    try:
+        answer = ModelAnswer.model_validate(payload)
     except ValidationError as exc:
         raise ProviderFailed("provider_malformed") from exc
     _validate_answer(answer, retrieved_ids)

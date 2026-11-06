@@ -3,9 +3,10 @@ from dataclasses import dataclass
 from uuid import UUID
 
 from sqlalchemy import select, text
-from sqlalchemy.exc import IntegrityError, InterfaceError, OperationalError
+from sqlalchemy.exc import IntegrityError
 
 from app.config import Settings, get_settings
+from app.db import database_unavailable
 from app.constants import RETRYABLE_ERROR_CODES
 from app.db import session_scope, utcnow
 from app.errors import ApiError, FileRejected, StorageFailed
@@ -175,10 +176,6 @@ def _accept(
             deduplicated=True,
             enqueue_failed=False,
         )
-    except (OperationalError, InterfaceError):
-        if written is not None:
-            remove_storage(written, settings)
-        raise ApiError(503, "database_unavailable") from None
     except StorageFailed:
         raise ApiError(503, "storage_failed") from None
     except ApiError:
@@ -187,6 +184,12 @@ def _accept(
         raise
     except FileRejected:
         raise
+    except Exception as exc:
+        if not database_unavailable(exc):
+            raise
+        if written is not None:
+            remove_storage(written, settings)
+        raise ApiError(503, "database_unavailable") from None
 
     assert existing_document is not None
     if deduplicated or created_version is None:
@@ -215,7 +218,9 @@ def _accept(
         )
     try:
         _mark_queued(created_version)
-    except (OperationalError, InterfaceError):
+    except Exception as exc:
+        if not database_unavailable(exc):
+            raise
         logger.error("status_update_failed version_id=%s error_type=database", created_version)
     logger.info("upload_accepted document_id=%s version_id=%s", existing_document, created_version)
     return AcceptResult(

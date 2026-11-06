@@ -5,9 +5,9 @@ from uuid import UUID
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
-from sqlalchemy.exc import InterfaceError, OperationalError
 
 from app.config import get_settings
+from app.db import database_unavailable
 from app.errors import ApiError
 from app.services.questions import get_question, submit_question
 
@@ -26,7 +26,9 @@ async def ask(body: AskRequest) -> JSONResponse:
         view = await asyncio.to_thread(submit_question, body.question, body.document_id, body.top_k)
     except ApiError:
         raise
-    except (OperationalError, InterfaceError):
+    except Exception as exc:
+        if not database_unavailable(exc):
+            raise
         raise ApiError(503, "database_unavailable") from None
     if view.state in {"succeeded", "failed"}:
         status = 503 if view.error_code == "enqueue_failed" else 200
@@ -36,7 +38,9 @@ async def ask(body: AskRequest) -> JSONResponse:
         await asyncio.sleep(0.2)
         try:
             view = await asyncio.to_thread(get_question, view.id)
-        except (OperationalError, InterfaceError):
+        except Exception as exc:
+            if not database_unavailable(exc):
+                raise
             raise ApiError(503, "database_unavailable") from None
         if view.state in {"succeeded", "failed"}:
             status = 503 if view.error_code == "enqueue_failed" else 200
@@ -53,6 +57,8 @@ def read_question(question_id: UUID) -> JSONResponse:
         view = get_question(question_id)
     except ApiError:
         raise
-    except (OperationalError, InterfaceError):
+    except Exception as exc:
+        if not database_unavailable(exc):
+            raise
         raise ApiError(503, "database_unavailable") from None
     return JSONResponse(view.model_dump(mode="json"))

@@ -2,7 +2,6 @@ import json
 import urllib.error
 import urllib.request
 
-from app.config import Settings
 from app.errors import ProviderFailed
 
 _QUOTA_CODES = {"insufficient_quota", "billing_hard_limit_reached"}

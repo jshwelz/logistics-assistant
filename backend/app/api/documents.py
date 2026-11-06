@@ -4,11 +4,11 @@ from uuid import UUID
 
 from fastapi import APIRouter, Request
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
-from sqlalchemy.exc import InterfaceError, OperationalError
 from starlette.formparsers import MultiPartException, MultiPartParser
 
 from app.config import get_settings
 from app.constants import SSE_RETRY_MS
+from app.db import database_unavailable
 from app.errors import FILE_REJECT_STATUS, ApiError, FileRejected
 from app.services.catalog import accept_new_document, accept_replacement, retry_version
 from app.services.status import get_document, list_documents, status_snapshot
@@ -77,7 +77,9 @@ async def event_stream(document_id: UUID, is_disconnected, sleep):
     while not await is_disconnected():
         try:
             snapshot = await asyncio.to_thread(status_snapshot, document_id)
-        except (OperationalError, InterfaceError):
+        except Exception as exc:
+            if not database_unavailable(exc):
+                raise
             yield 'event: error\ndata: {"error_code":"database_unavailable"}\n\n'
             break
         if snapshot is None:
@@ -165,7 +167,9 @@ def _db(fn):
         return fn()
     except ApiError:
         raise
-    except (OperationalError, InterfaceError):
+    except Exception as exc:
+        if not database_unavailable(exc):
+            raise
         raise ApiError(503, "database_unavailable") from None
 
 

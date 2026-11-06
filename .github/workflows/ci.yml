@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:0.8.0-pg16
+        env:
+          POSTGRES_USER: logistics
+          POSTGRES_PASSWORD: logistics
+          POSTGRES_DB: logistics
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U logistics -d logistics"
+          --health-interval 2s
+          --health-timeout 5s
+          --health-retries 30
+      redis:
+        image: redis:7.4.2-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 2s
+          --health-timeout 3s
+          --health-retries 30
+    env:
+      TEST_DATABASE_URL: postgresql+psycopg://logistics:logistics@localhost:5432/logistics_test
+      TEST_REDIS_URL: redis://localhost:6379/1
+      EMBEDDING_PROVIDER: fake
+      EMBEDDING_MODEL: fake-token-v1
+      ANSWER_PROVIDER: fake
+      OTEL_SDK_DISABLED: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.8"
+      - uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.9.18"
+          python-version: "3.12.8"
+      - name: Install locked dependencies
+        working-directory: backend
+        run: uv sync --frozen --extra dev
+      - name: Ruff
+        working-directory: backend
+        run: uv run ruff check
+      - name: Pytest
+        working-directory: backend
+        run: uv run pytest
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.14.0"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install locked dependencies
+        working-directory: frontend
+        run: npm ci
+      - name: Typecheck and production build
+        working-directory: frontend
+        run: npm run build

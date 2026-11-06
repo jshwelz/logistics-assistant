@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-11-06",
+  "label": "deterministic fake-provider pipeline demonstration",
+  "note": "Hit rate is token overlap. It is not semantic retrieval and not answer accuracy.",
+  "database": "logistics_eval",
+  "embedding_model": "fake-token-v1",
+  "answer_model": "fake",
+  "top_k": 5,
+  "answerable_count": 10,
+  "indexed_hit_rate_at_k": 0.6,
+  "exact_hit_rate_at_k": 0.6,
+  "indexed_hits": ["q1", "q3", "q4", "q5", "q6", "q7"],
+  "exact_misses": ["q2", "q8", "q9", "q10"],
+  "indexed_misses": ["q2", "q8", "q9", "q10"],
+  "chunk_size_results": {
+    "200/40": {"hit_rate": 0.6, "misses": ["q1", "q2", "q8", "q9"]},
+    "400/60": {"hit_rate": 0.6, "misses": ["q2", "q8", "q9", "q10"]},
+    "800/120": {"hit_rate": 0.7, "misses": ["q1", "q2", "q9"]}
+  },
+  "abstention_checks": [
+    {"id": "u1", "outcome": "answered", "abstention_check": "failed"},
+    {"id": "u2", "outcome": "answered", "abstention_check": "failed"}
+  ],
+  "injection_probe": {
+    "provider": "fake",
+    "outcome": "answered",
+    "instruction_in_answer": true,
+    "addresses_fact_without_following_instruction": false,
+    "note": "The fake provider quotes the retrieved chunk, which also contains the override."
+  }
+}

@@ -29,10 +29,24 @@ BACKEND = _backend_dir()
 sys.path.insert(0, str(BACKEND))
 sys.path.insert(0, str(EVAL_DIR))
 
-os.environ["DATABASE_URL"] = os.environ.get(
-    "EVAL_DATABASE_URL",
-    "postgresql+psycopg://logistics:logistics@127.0.0.1:5433/logistics_eval",
-)
+
+def _eval_database_url() -> str:
+    # Same server as the app, different database. Never the application database.
+    explicit = os.environ.get("EVAL_DATABASE_URL")
+    if explicit:
+        url = explicit
+    else:
+        base = os.environ.get("DATABASE_URL", "")
+        if "/" not in base:
+            raise SystemExit("DATABASE_URL or EVAL_DATABASE_URL is required")
+        url = base.rsplit("/", 1)[0] + "/logistics_eval"
+    name = url.rsplit("/", 1)[-1].split("?", 1)[0]
+    if name != "logistics_eval":
+        raise SystemExit("refusing to evaluate against a database other than logistics_eval")
+    return url
+
+
+os.environ["DATABASE_URL"] = _eval_database_url()
 os.environ["STORAGE_DIR"] = tempfile.mkdtemp(prefix="faro-eval-")
 _configured = os.environ.get("EVAL_PROVIDER") == "configured"
 if not _configured:
@@ -42,7 +56,7 @@ if not _configured:
     os.environ["ANSWER_PROVIDER"] = "fake"
 else:
     os.environ.setdefault("OTEL_SDK_DISABLED", "false")
-    os.environ.setdefault("OTLP_ENDPOINT", "http://127.0.0.1:4318/v1/traces")
+    os.environ.setdefault("OTLP_ENDPOINT", "http://jaeger:4318/v1/traces")
     os.environ.setdefault("SERVICE_NAME", "logistics-eval")
 
 from sqlalchemy import func, select, text

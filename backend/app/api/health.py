@@ -1,11 +1,9 @@
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 from redis import Redis
-from sqlalchemy import text
-from sqlalchemy.exc import InterfaceError, OperationalError
 
 from app.config import get_settings
-from app.db import session_scope
+from app.db import probe_database
 
 router = APIRouter()
 
@@ -28,10 +26,7 @@ def health() -> JSONResponse:
 
 def _probe() -> str | None:
     settings = get_settings()
-    try:
-        with session_scope() as session:
-            session.execute(text("SELECT 1"))
-    except (OperationalError, InterfaceError, OSError):
+    if not probe_database(settings.dependency_timeout_seconds):
         return "database_unavailable"
     try:
         client = Redis.from_url(

@@ -38,6 +38,7 @@ class Settings(BaseSettings):
     stranded_after_seconds: int = 120
     sse_poll_seconds: float = 1.0
     db_statement_timeout_ms: int = 30_000
+    db_socket_timeout_seconds: float = 10.0
     dependency_timeout_seconds: float = Field(default=2.0)
     worker_heartbeat_path: Path = Path("/tmp/worker-alive")
     answer_provider: str = "fake"
@@ -92,6 +93,8 @@ def validate_runtime_config(settings: Settings) -> None:
         raise RuntimeError("question attempts must be at least 1")
     if settings.answer_max_tokens < 32:
         raise RuntimeError("answer token cap must be at least 32")
+    if settings.db_socket_timeout_seconds <= 0 or settings.dependency_timeout_seconds <= 0:
+        raise RuntimeError("database timeouts must be positive")
     if settings.answer_provider == "fake":
         return
     if settings.answer_provider != "openai":

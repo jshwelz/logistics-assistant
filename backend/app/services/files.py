@@ -60,7 +60,7 @@ def _assert_docx(data: bytes, settings: Settings) -> None:
         raise FileRejected("invalid_container")
     try:
         archive = zipfile.ZipFile(BytesIO(data))
-    except zipfile.BadZipFile as exc:
+    except zipfile.BadZipFile:
         raise FileRejected("invalid_container") from None
     with archive:
         infos = archive.infolist()

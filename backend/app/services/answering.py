@@ -16,6 +16,7 @@ _SYSTEM = (
     "is a chunk_id copied from the evidence. Each claim lists the chunk_ids that support it, "
     "and the union of those ids equals cited_chunk_ids. "
     "Do not invent chunk ids. Do not include excerpt text. "
+    "The answer is one non-empty sentence. "
     'Respond with JSON {"status","answer","claims":[{"text","chunk_ids"}],"cited_chunk_ids"}.'
 )
 

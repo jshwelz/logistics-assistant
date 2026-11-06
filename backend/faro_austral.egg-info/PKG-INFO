@@ -23,3 +23,4 @@ Requires-Dist: uvicorn==0.34.0
 Provides-Extra: dev
 Requires-Dist: httpx==0.28.1; extra == "dev"
 Requires-Dist: pytest==8.3.4; extra == "dev"
+Requires-Dist: ruff==0.14.5; extra == "dev"

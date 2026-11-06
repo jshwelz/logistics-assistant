@@ -1,0 +1,3746 @@
+{
+  "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+  "spans": [
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "0bdf8c3acfabd2c7",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953973588469,
+      "duration": 1053,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "6e3ba625059ce04b",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953973802552,
+      "duration": 1657,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "3617bb3af38e8f39",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "a2bd3d89f5938e5b"
+        }
+      ],
+      "startTime": 1793953973388387,
+      "duration": 103,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "e19196891480c6a3",
+      "operationName": "question.retrieve",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "a2bd3d89f5938e5b"
+        }
+      ],
+      "startTime": 1793953973389627,
+      "duration": 649934,
+      "tags": [
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "app.questions"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "internal"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "66fd51977929706f",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953975261129,
+      "duration": 1076,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "58c8881866818484",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953976095222,
+      "duration": 347,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "5de5d5aa48ff89a7",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953976095781,
+      "duration": 314,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "3e9471a2ce792c04",
+      "operationName": "UPDATE logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "a2bd3d89f5938e5b"
+        }
+      ],
+      "startTime": 1793953976227494,
+      "duration": 740,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "UPDATE question_runs SET state=%(state)s::VARCHAR, outcome=%(outcome)s::VARCHAR, answer=%(answer)s::VARCHAR, claims=%(claims)s::JSONB, cited_chunk_ids=%(cited_chunk_ids)s::JSONB, retrieval_latency_ms=%(retrieval_latency_ms)s, provider_latency_ms=%(provider_latency_ms)s, prompt_tokens=%(prompt_tokens)s::INTEGER, completion_tokens=%(completion_tokens)s::INTEGER, worker_token=%(worker_token)s::UUID, lease_expires_at=%(lease_expires_at)s::TIMESTAMP WITH TIME ZONE, updated_at=%(updated_at)s::TIMESTAMP WITH TIME ZONE WHERE question_runs.id = %(question_runs_id)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "b87574d16bbdeb07",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953975049552,
+      "duration": 290,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "364e6d4b069bcf08",
+      "operationName": "INSERT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953973380754,
+      "duration": 395,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "INSERT INTO question_runs (id, idempotency_key, question, document_id, top_k, embedding_model, embedding_dimension, answer_model, state, outcome, error_code, answer, claims, cited_chunk_ids, retrieval_latency_ms, provider_latency_ms, prompt_tokens, completion_tokens, attempt_count, deadline_at, worker_token, lease_expires_at, created_at, updated_at) VALUES (%(id)s::UUID, %(idempotency_key)s::VARCHAR, %(question)s::VARCHAR, %(document_id)s::UUID, %(top_k)s::INTEGER, %(embedding_model)s::VARCHAR, %(embedding_dimension)s::INTEGER, %(answer_model)s::VARCHAR, %(state)s::VARCHAR, %(outcome)s::VARCHAR, %(error_code)s::VARCHAR, %(answer)s::VARCHAR, %(claims)s::JSONB, %(cited_chunk_ids)s::JSONB, %(retrieval_latency_ms)s, %(provider_latency_ms)s, %(prompt_tokens)s::INTEGER, %(completion_tokens)s::INTEGER, %(attempt_count)s::INTEGER, %(deadline_at)s::TIMESTAMP WITH TIME ZONE, %(worker_token)s::UUID, %(lease_expires_at)s::TIMESTAMP WITH TIME ZONE, %(created_at)s::TIMESTAMP WITH TIME ZONE, %(updated_at)s::TIMESTAMP WITH TIME ZONE)"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "42087b2669eaa45b",
+      "operationName": "POST /ask http receive",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953973376831,
+      "duration": 62,
+      "tags": [
+        {
+          "key": "asgi.event.type",
+          "type": "string",
+          "value": "http.request"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.fastapi"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "internal"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "ee7af014356eda2f",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953975891081,
+      "duration": 1055,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "070b62c73b90f0f9",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953975259148,
+      "duration": 1277,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "b7d8a2415d31c391",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "77481b113e8edefc"
+        }
+      ],
+      "startTime": 1793953973385026,
+      "duration": 504,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id, question_runs.idempotency_key, question_runs.question, question_runs.document_id, question_runs.top_k, question_runs.embedding_model, question_runs.embedding_dimension, question_runs.answer_model, question_runs.state, question_runs.outcome, question_runs.error_code, question_runs.answer, question_runs.claims, question_runs.cited_chunk_ids, question_runs.retrieval_latency_ms, question_runs.provider_latency_ms, question_runs.prompt_tokens, question_runs.completion_tokens, question_runs.attempt_count, question_runs.deadline_at, question_runs.worker_token, question_runs.lease_expires_at, question_runs.created_at, question_runs.updated_at \nFROM question_runs \nWHERE question_runs.id = %(id_1)s::UUID FOR UPDATE"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "77481b113e8edefc",
+      "operationName": "run/app.tasks.answer_question",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "3d9facedd7d5ded1"
+        }
+      ],
+      "startTime": 1793953973384297,
+      "duration": 2845622,
+      "tags": [
+        {
+          "key": "celery.action",
+          "type": "string",
+          "value": "run"
+        },
+        {
+          "key": "celery.delivery_info",
+          "type": "string",
+          "value": "{'exchange': '', 'routing_key': 'celery', 'priority': 0, 'redelivered': False}"
+        },
+        {
+          "key": "celery.hostname",
+          "type": "string",
+          "value": "gen1@d76807443753"
+        },
+        {
+          "key": "celery.reply_to",
+          "type": "string",
+          "value": "40cfe691-3290-3418-b626-a7712a6ede35"
+        },
+        {
+          "key": "celery.state",
+          "type": "string",
+          "value": "SUCCESS"
+        },
+        {
+          "key": "celery.task_name",
+          "type": "string",
+          "value": "app.tasks.answer_question"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "messaging.conversation_id",
+          "type": "string",
+          "value": "4eaec7bf-f242-4f56-8621-894c8e2c7ea8"
+        },
+        {
+          "key": "messaging.destination",
+          "type": "string",
+          "value": "celery"
+        },
+        {
+          "key": "messaging.message.id",
+          "type": "string",
+          "value": "4eaec7bf-f242-4f56-8621-894c8e2c7ea8"
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.celery"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "consumer"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "6a2c48bafb23b706",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953974633106,
+      "duration": 1063,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "87685bdd687c0704",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953974009899,
+      "duration": 1044,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "fe6d9fbb6112a133",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953975677583,
+      "duration": 1338,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "fc5d4715abe8fdff",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953975679652,
+      "duration": 1041,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "8729d11088c1896d",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953973590282,
+      "duration": 1504,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "11c03352eff64fda",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "a2bd3d89f5938e5b"
+        }
+      ],
+      "startTime": 1793953976224453,
+      "duration": 588,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "1ab58633ea294f45",
+      "operationName": "question.provider",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "a2bd3d89f5938e5b"
+        }
+      ],
+      "startTime": 1793953974039647,
+      "duration": 2183283,
+      "tags": [
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "app.questions"
+        },
+        {
+          "key": "provider.completion_tokens",
+          "type": "int64",
+          "value": 178
+        },
+        {
+          "key": "provider.duration_ms",
+          "type": "float64",
+          "value": 2183.19
+        },
+        {
+          "key": "provider.model",
+          "type": "string",
+          "value": "gemini-3.5-flash-lite"
+        },
+        {
+          "key": "provider.prompt_tokens",
+          "type": "int64",
+          "value": 529
+        },
+        {
+          "key": "provider.token_usage_present",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "internal"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "28e9436400e079a6",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953974845461,
+      "duration": 994,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "76b8f884f5589ca9",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953975050019,
+      "duration": 452,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "fb2feb4556190e02",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "77481b113e8edefc"
+        }
+      ],
+      "startTime": 1793953973384591,
+      "duration": 254,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "6365113e485e8327",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953973379409,
+      "duration": 639,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id, question_runs.idempotency_key, question_runs.question, question_runs.document_id, question_runs.top_k, question_runs.embedding_model, question_runs.embedding_dimension, question_runs.answer_model, question_runs.state, question_runs.outcome, question_runs.error_code, question_runs.answer, question_runs.claims, question_runs.cited_chunk_ids, question_runs.retrieval_latency_ms, question_runs.provider_latency_ms, question_runs.prompt_tokens, question_runs.completion_tokens, question_runs.attempt_count, question_runs.deadline_at, question_runs.worker_token, question_runs.lease_expires_at, question_runs.created_at, question_runs.updated_at \nFROM question_runs \nWHERE question_runs.idempotency_key = %(idempotency_key_1)s::VARCHAR"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "f3ee27b8d3046c76",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953973383561,
+      "duration": 192,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "d97ce9a8f36eded7",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953973799620,
+      "duration": 1413,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "5d948e22e600848c",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953974426177,
+      "duration": 1254,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "49e1ebbb974f3914",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953976297650,
+      "duration": 328,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "3d9facedd7d5ded1",
+      "operationName": "apply_async/app.tasks.answer_question",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953973382512,
+      "duration": 47,
+      "tags": [
+        {
+          "key": "celery.action",
+          "type": "string",
+          "value": "apply_async"
+        },
+        {
+          "key": "celery.task_name",
+          "type": "string",
+          "value": "app.tasks.answer_question"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "messaging.destination",
+          "type": "string",
+          "value": "celery"
+        },
+        {
+          "key": "messaging.destination_kind",
+          "type": "string",
+          "value": "queue"
+        },
+        {
+          "key": "messaging.message.id",
+          "type": "string",
+          "value": "4eaec7bf-f242-4f56-8621-894c8e2c7ea8"
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.celery"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "producer"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "217c821d297508fe",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "e19196891480c6a3"
+        }
+      ],
+      "startTime": 1793953974029456,
+      "duration": 667,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "8f5c4f187a83b466",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953974842542,
+      "duration": 2331,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "43124617b2738934",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953975889590,
+      "duration": 880,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "dabe8f361bce1eb0",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953976299233,
+      "duration": 188,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT document_versions.id AS document_versions_id, document_versions.document_id AS document_versions_document_id, document_versions.sequence AS document_versions_sequence, document_versions.content_hash AS document_versions_content_hash, document_versions.state AS document_versions_state, document_versions.stage AS document_versions_stage, document_versions.error_code AS document_versions_error_code, document_versions.attempt_count AS document_versions_attempt_count, document_versions.source_label AS document_versions_source_label, document_versions.original_path AS document_versions_original_path, document_versions.normalized_path AS document_versions_normalized_path, document_versions.embedding_model AS document_versions_embedding_model, document_versions.embedding_dimension AS document_versions_embedding_dimension, document_versions.worker_token AS document_versions_worker_token, document_versions.lease_expires_at AS document_versions_lease_expires_at, document_versions.created_at AS document_versions_created_at, document_versions.updated_at AS document_versions_updated_at \nFROM document_versions \nWHERE document_versions.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "759d1df9558f7952",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "a2bd3d89f5938e5b"
+        }
+      ],
+      "startTime": 1793953973389046,
+      "duration": 325,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT document_versions.embedding_model \nFROM document_versions JOIN documents ON documents.current_version_id = document_versions.id \nWHERE document_versions.state = %(state_1)s::VARCHAR"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "bcdcc766cd723b45",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953973383904,
+      "duration": 416,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "fdc2e570f0f0db4b",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953974424282,
+      "duration": 1152,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "9ea988d5dcc2355a",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953975470061,
+      "duration": 328,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "8bf3ab05556d0de5",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "e19196891480c6a3"
+        }
+      ],
+      "startTime": 1793953974033778,
+      "duration": 2807,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT chunks.id, chunks.version_id, chunks.ordinal, chunks.page, chunks.section, chunks.text, chunks.start_offset, chunks.end_offset, chunks.token_count, chunks.embedding, documents.id AS id_1, chunks.embedding <=> %(embedding_1)s AS anon_1 \nFROM chunks JOIN document_versions ON document_versions.id = chunks.version_id JOIN documents ON documents.current_version_id = document_versions.id \nWHERE document_versions.state = %(state_1)s::VARCHAR AND document_versions.embedding_model = %(embedding_model_1)s::VARCHAR AND document_versions.embedding_dimension = %(embedding_dimension_1)s::INTEGER ORDER BY chunks.embedding <=> %(embedding_1)s \n LIMIT %(param_1)s::INTEGER"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "6f1b7d33bf6d046e",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953973378511,
+      "duration": 593,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "53c06cbe319dd72b",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "a2bd3d89f5938e5b"
+        }
+      ],
+      "startTime": 1793953973387518,
+      "duration": 243,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id, question_runs.idempotency_key, question_runs.question, question_runs.document_id, question_runs.top_k, question_runs.embedding_model, question_runs.embedding_dimension, question_runs.answer_model, question_runs.state, question_runs.outcome, question_runs.error_code, question_runs.answer, question_runs.claims, question_runs.cited_chunk_ids, question_runs.retrieval_latency_ms, question_runs.provider_latency_ms, question_runs.prompt_tokens, question_runs.completion_tokens, question_runs.attempt_count, question_runs.deadline_at, question_runs.worker_token, question_runs.lease_expires_at, question_runs.created_at, question_runs.updated_at \nFROM question_runs \nWHERE question_runs.id = %(id_1)s::UUID FOR UPDATE"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "c54e7618ee7c6b34",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "a2bd3d89f5938e5b"
+        }
+      ],
+      "startTime": 1793953976225409,
+      "duration": 1056,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id, question_runs.idempotency_key, question_runs.question, question_runs.document_id, question_runs.top_k, question_runs.embedding_model, question_runs.embedding_dimension, question_runs.answer_model, question_runs.state, question_runs.outcome, question_runs.error_code, question_runs.answer, question_runs.claims, question_runs.cited_chunk_ids, question_runs.retrieval_latency_ms, question_runs.provider_latency_ms, question_runs.prompt_tokens, question_runs.completion_tokens, question_runs.attempt_count, question_runs.deadline_at, question_runs.worker_token, question_runs.lease_expires_at, question_runs.created_at, question_runs.updated_at \nFROM question_runs \nWHERE question_runs.id = %(id_1)s::UUID FOR UPDATE"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "4073905cbfcd12f1",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953974631557,
+      "duration": 936,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "d440cfea90369cd4",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953976297228,
+      "duration": 270,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "a2bd3d89f5938e5b",
+      "operationName": "question.execute",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "77481b113e8edefc"
+        }
+      ],
+      "startTime": 1793953973387149,
+      "duration": 2842391,
+      "tags": [
+        {
+          "key": "ask.outcome",
+          "type": "string",
+          "value": "answered"
+        },
+        {
+          "key": "embedding.model",
+          "type": "string",
+          "value": "gemini-embedding-001"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "app.questions"
+        },
+        {
+          "key": "provider.called",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "key": "provider.completion_tokens",
+          "type": "int64",
+          "value": 178
+        },
+        {
+          "key": "provider.duration_ms",
+          "type": "float64",
+          "value": 2183.19
+        },
+        {
+          "key": "provider.model",
+          "type": "string",
+          "value": "gemini-3.5-flash-lite"
+        },
+        {
+          "key": "provider.prompt_tokens",
+          "type": "int64",
+          "value": 529
+        },
+        {
+          "key": "provider.token_usage_present",
+          "type": "bool",
+          "value": true
+        },
+        {
+          "key": "question.run_id",
+          "type": "string",
+          "value": "aee6d160-f064-4e1d-b032-b9ce41210e84"
+        },
+        {
+          "key": "retrieval.duration_ms",
+          "type": "float64",
+          "value": 649.973
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "internal"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "e41500576433c7e9",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953974011656,
+      "duration": 1343,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "b785b2eebaeb64b8",
+      "operationName": "UPDATE logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "77481b113e8edefc"
+        }
+      ],
+      "startTime": 1793953973386194,
+      "duration": 346,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "UPDATE question_runs SET state=%(state)s::VARCHAR, attempt_count=%(attempt_count)s::INTEGER, worker_token=%(worker_token)s::UUID, lease_expires_at=%(lease_expires_at)s::TIMESTAMP WITH TIME ZONE, updated_at=%(updated_at)s::TIMESTAMP WITH TIME ZONE WHERE question_runs.id = %(question_runs_id)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "f68ba56d241fe011",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953975470599,
+      "duration": 610,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "e8a5bfc663de949e",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953974218026,
+      "duration": 800,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT question_runs.id AS question_runs_id, question_runs.idempotency_key AS question_runs_idempotency_key, question_runs.question AS question_runs_question, question_runs.document_id AS question_runs_document_id, question_runs.top_k AS question_runs_top_k, question_runs.embedding_model AS question_runs_embedding_model, question_runs.embedding_dimension AS question_runs_embedding_dimension, question_runs.answer_model AS question_runs_answer_model, question_runs.state AS question_runs_state, question_runs.outcome AS question_runs_outcome, question_runs.error_code AS question_runs_error_code, question_runs.answer AS question_runs_answer, question_runs.claims AS question_runs_claims, question_runs.cited_chunk_ids AS question_runs_cited_chunk_ids, question_runs.retrieval_latency_ms AS question_runs_retrieval_latency_ms, question_runs.provider_latency_ms AS question_runs_provider_latency_ms, question_runs.prompt_tokens AS question_runs_prompt_tokens, question_runs.completion_tokens AS question_runs_completion_tokens, question_runs.attempt_count AS question_runs_attempt_count, question_runs.deadline_at AS question_runs_deadline_at, question_runs.worker_token AS question_runs_worker_token, question_runs.lease_expires_at AS question_runs_lease_expires_at, question_runs.created_at AS question_runs_created_at, question_runs.updated_at AS question_runs_updated_at \nFROM question_runs \nWHERE question_runs.id = %(pk_1)s::UUID"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "f178939fa2d4b127",
+      "operationName": "SELECT logistics",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953976298450,
+      "duration": 336,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.statement",
+          "type": "string",
+          "value": "SELECT chunks.id, chunks.version_id, chunks.ordinal, chunks.page, chunks.section, chunks.text, chunks.start_offset, chunks.end_offset, chunks.token_count, chunks.embedding \nFROM chunks \nWHERE chunks.id IN (%(id_1_1)s::UUID)"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "658d630a736aeb42",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "a2bd3d89f5938e5b"
+        }
+      ],
+      "startTime": 1793953973387299,
+      "duration": 115,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p2",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "db15797350738827",
+      "operationName": "POST /ask http send",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953976300141,
+      "duration": 6,
+      "tags": [
+        {
+          "key": "asgi.event.type",
+          "type": "string",
+          "value": "http.response.body"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.fastapi"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "internal"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "67341de62cce844a",
+      "operationName": "POST /ask http send",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953976299921,
+      "duration": 21,
+      "tags": [
+        {
+          "key": "asgi.event.type",
+          "type": "string",
+          "value": "http.response.start"
+        },
+        {
+          "key": "http.status_code",
+          "type": "int64",
+          "value": 200
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.fastapi"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "internal"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "485b0b53c6203fa1",
+      "operationName": "POST /ask",
+      "references": [],
+      "startTime": 1793953973376484,
+      "duration": 2923725,
+      "tags": [
+        {
+          "key": "http.flavor",
+          "type": "string",
+          "value": "1.1"
+        },
+        {
+          "key": "http.host",
+          "type": "string",
+          "value": "172.23.0.6:8000"
+        },
+        {
+          "key": "http.method",
+          "type": "string",
+          "value": "POST"
+        },
+        {
+          "key": "http.route",
+          "type": "string",
+          "value": "/ask"
+        },
+        {
+          "key": "http.scheme",
+          "type": "string",
+          "value": "http"
+        },
+        {
+          "key": "http.server_name",
+          "type": "string",
+          "value": "127.0.0.1:8001"
+        },
+        {
+          "key": "http.status_code",
+          "type": "int64",
+          "value": 200
+        },
+        {
+          "key": "http.target",
+          "type": "string",
+          "value": "/ask"
+        },
+        {
+          "key": "http.url",
+          "type": "string",
+          "value": "http://172.23.0.6:8000/ask"
+        },
+        {
+          "key": "http.user_agent",
+          "type": "string",
+          "value": "Python-urllib/3.12"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.host.port",
+          "type": "int64",
+          "value": 8000
+        },
+        {
+          "key": "net.peer.ip",
+          "type": "string",
+          "value": "192.168.65.1"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 53222
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.fastapi"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "server"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    },
+    {
+      "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+      "spanID": "3b2005fb6748449e",
+      "operationName": "connect",
+      "references": [
+        {
+          "refType": "CHILD_OF",
+          "traceID": "07f133dcd9c47a8996dd4d0d7b54c17b",
+          "spanID": "485b0b53c6203fa1"
+        }
+      ],
+      "startTime": 1793953974216919,
+      "duration": 654,
+      "tags": [
+        {
+          "key": "db.name",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "db.system",
+          "type": "string",
+          "value": "postgresql"
+        },
+        {
+          "key": "db.user",
+          "type": "string",
+          "value": "logistics"
+        },
+        {
+          "key": "internal.span.format",
+          "type": "string",
+          "value": "otlp"
+        },
+        {
+          "key": "net.peer.name",
+          "type": "string",
+          "value": "postgres"
+        },
+        {
+          "key": "net.peer.port",
+          "type": "int64",
+          "value": 5432
+        },
+        {
+          "key": "otel.scope.name",
+          "type": "string",
+          "value": "opentelemetry.instrumentation.sqlalchemy"
+        },
+        {
+          "key": "otel.scope.version",
+          "type": "string",
+          "value": "0.50b0"
+        },
+        {
+          "key": "span.kind",
+          "type": "string",
+          "value": "client"
+        }
+      ],
+      "logs": [],
+      "processID": "p1",
+      "warnings": null
+    }
+  ],
+  "processes": {
+    "p1": {
+      "serviceName": "logistics-api",
+      "tags": [
+        {
+          "key": "telemetry.sdk.language",
+          "type": "string",
+          "value": "python"
+        },
+        {
+          "key": "telemetry.sdk.name",
+          "type": "string",
+          "value": "opentelemetry"
+        },
+        {
+          "key": "telemetry.sdk.version",
+          "type": "string",
+          "value": "1.29.0"
+        }
+      ]
+    },
+    "p2": {
+      "serviceName": "logistics-worker",
+      "tags": [
+        {
+          "key": "telemetry.sdk.language",
+          "type": "string",
+          "value": "python"
+        },
+        {
+          "key": "telemetry.sdk.name",
+          "type": "string",
+          "value": "opentelemetry"
+        },
+        {
+          "key": "telemetry.sdk.version",
+          "type": "string",
+          "value": "1.29.0"
+        }
+      ]
+    }
+  },
+  "warnings": null
+}

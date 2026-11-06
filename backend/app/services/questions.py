@@ -17,6 +17,7 @@ from app.errors import ApiError, LostLease, ProviderFailed
 from app.models import Chunk, Document, DocumentVersion, QuestionRun
 from app.schemas import CitationView, ClaimView, QuestionView
 from app.services.answering import get_answer_provider
+from app.services.citations import ABSTAIN_TEXT
 from app.services.embeddings import get_embedding_provider
 from app.services.retrieval import retrieve
 
@@ -457,4 +458,4 @@ def _record_usage(span, prompt_tokens: int | None, completion_tokens: int | None
 
 
 def _abstain_text() -> str:
-    return "The indexed documents do not contain enough evidence to answer."
+    return ABSTAIN_TEXT

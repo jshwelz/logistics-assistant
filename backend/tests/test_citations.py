@@ -17,6 +17,26 @@ def _answered(chunk_id) -> str:
     )
 
 
+def test_blank_abstention_keeps_empty_citations():
+    answer = parse_model_answer(
+        '{"status":"insufficient_evidence","answer":"","claims":[],"cited_chunk_ids":[]}',
+        set(),
+    )
+    assert answer.status == "insufficient_evidence"
+    assert answer.answer == "The indexed documents do not contain enough evidence to answer."
+    assert answer.cited_chunk_ids == []
+    assert answer.claims == []
+
+
+def test_blank_answered_status_stays_malformed():
+    with pytest.raises(ProviderFailed) as caught:
+        parse_model_answer(
+            '{"status":"answered","answer":"   ","claims":[],"cited_chunk_ids":[]}',
+            set(),
+        )
+    assert caught.value.code == "provider_malformed"
+
+
 def test_valid_citation_is_accepted():
     chunk_id = uuid4()
     answer = parse_model_answer(_answered(chunk_id), {chunk_id})
