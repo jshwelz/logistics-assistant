@@ -1,0 +1,170 @@
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.0-pg16
+    environment:
+      POSTGRES_USER: logistics
+      POSTGRES_PASSWORD: logistics
+      POSTGRES_DB: logistics
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U logistics -d logistics"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+  redis:
+    image: redis:7.4.2-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.62.0
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true"
+    ports:
+      - "16686:16686"
+      - "4318:4318"
+
+  migrate:
+    build:
+      context: ./backend
+      target: runtime
+    command: ["alembic", "upgrade", "head"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://logistics:logistics@postgres:5432/logistics
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    build:
+      context: ./backend
+      target: runtime
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+psycopg://logistics:logistics@postgres:5432/logistics
+      REDIS_URL: redis://redis:6379/0
+      STORAGE_DIR: /data/documents
+      EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-fake}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-fake-token-v1}
+      ANSWER_PROVIDER: ${ANSWER_PROVIDER:-fake}
+      ANSWER_MODEL: ${ANSWER_MODEL:-}
+      PROVIDER_BASE_URL: ${PROVIDER_BASE_URL:-}
+      PROVIDER_API_KEY: ${PROVIDER_API_KEY:-}
+      OTLP_ENDPOINT: http://jaeger:4318/v1/traces
+      OTEL_SDK_DISABLED: "false"
+      SERVICE_NAME: logistics-api
+    volumes:
+      - documents:/data/documents
+    ports:
+      - "${API_PORT:-8000}:8000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      jaeger:
+        condition: service_started
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 15s
+
+  worker:
+    # One replica: this process also runs the stranded-job schedule.
+    build:
+      context: ./backend
+      target: worker
+    command:
+      [
+        "celery",
+        "-A",
+        "app.worker:celery_app",
+        "worker",
+        "--beat",
+        "--loglevel=INFO",
+        "-P",
+        "prefork",
+        "-c",
+        "2",
+      ]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+psycopg://logistics:logistics@postgres:5432/logistics
+      REDIS_URL: redis://redis:6379/0
+      STORAGE_DIR: /data/documents
+      EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-fake}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-fake-token-v1}
+      ANSWER_PROVIDER: ${ANSWER_PROVIDER:-fake}
+      ANSWER_MODEL: ${ANSWER_MODEL:-}
+      PROVIDER_BASE_URL: ${PROVIDER_BASE_URL:-}
+      PROVIDER_API_KEY: ${PROVIDER_API_KEY:-}
+      OTLP_ENDPOINT: http://jaeger:4318/v1/traces
+      OTEL_SDK_DISABLED: "false"
+      SERVICE_NAME: logistics-worker
+    volumes:
+      - documents:/data/documents
+    init: true
+    shm_size: "256mb"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      jaeger:
+        condition: service_started
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import os,time,pathlib; p=pathlib.Path('/tmp/worker-alive'); assert p.exists() and time.time()-p.stat().st_mtime<20",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 40s
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
+  documents:
