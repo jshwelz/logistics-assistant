@@ -1,4 +1,4 @@
-# Faro Austral Logística
+# Document Assistant
 
 A document assistant for a fictional logistics company. Upload a PDF or DOCX, wait for processing, and ask questions. Answers cite the stored passage and its page. If the evidence is not enough, the answer says so.
 
@@ -49,15 +49,3 @@ The first command is the fake provider. The second uses the provider configured 
 
 Measured runs are in `eval/results/`. On 6 November 2026 the fake run retrieved 6/10 and the Gemini run retrieved 9/10. In that Gemini run, `q4` was retrieved and then abstained, and `q7` failed with `provider_malformed`. The later `q7` call, `eval/results/2026-11-06-q7-rerun.json`, finished `insufficient_evidence` with no citations. The expected sentence had been retrieved. That call is not an answer-accuracy success.
 
-## Trace
-
-`observability/ask-trace.json` is a complete question trace from the API through Celery and PostgreSQL to the Gemini call. `observability/README.md` says what it shows.
-
-## Limitations
-
-- No OCR. A scan with no text fails explicitly.
-- Complex layouts may extract in the wrong order.
-- Citation checks bind a claim to a stored chunk. They do not prove every sentence is supported.
-- No authentication. This is a local demonstration.
-- Recovery scheduling assumes one worker.
-- Vectors are 768 dimensions. Migration `0003` removes older 64-dimension chunk rows.
